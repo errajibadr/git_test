@@ -9,6 +9,14 @@ class Graph:
     def __init__(self):
 
         self.graph = defaultdict(list)
+        
+    def __str__(self):
+
+        nodes = set()
+
+        self.__dfs_util(0, nodes)
+
+        return "Graph({})".format(", ".join([str(i) for i in list(nodes)]))
 
  
 
