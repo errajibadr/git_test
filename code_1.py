@@ -16,16 +16,15 @@ class Graph:
         self.graph[u].append(v)
 
  
+    def dfs_rec(self, v, nodes):
 
-    def dfs_rec(self, v, visited):
+            nodes.add(v)
 
-        visited.add(v)
+            for adj in self.graph[v]:
 
-        for nb in self.graph[v]:
+                if adj not in nodes:
 
-            if nb not in visited:
-
-                self.__dfs_util(nb, visited)
+                    self.dfs_rec(nb, nodes)
 
 
     def dfs(self, v):
