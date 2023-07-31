@@ -17,7 +17,7 @@ class Graph:
 
  
 
-    def __dfs_util(self, v, visited):
+    def dfs_rec(self, v, visited):
 
         visited.add(v)
 
@@ -27,7 +27,7 @@ class Graph:
 
             if neighbour not in visited:
 
-                self.__dfs_util(neighbour, visited)
+                self.dfs_rec(neighbour, visited)
 
 
     def dfs(self, v):
